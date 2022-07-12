@@ -1,6 +1,6 @@
 import { Component, ReactElement } from "react";
 import Hoge from "src/components/hoge";
-import Svg from "public/test.svg";
+import Svg from "public/icon.svg";
 
 interface Props { }
 interface State { }
