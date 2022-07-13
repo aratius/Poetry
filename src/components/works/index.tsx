@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Component, ReactElement } from "react";
 import { _Work, _Works } from "src/types/cms";
 
@@ -17,8 +18,12 @@ export default class Works extends Component<Props, State> {
 				{contents.map((content: _Work, i: number) => {
 					return(
 						<li className="works__item" key={content.id}>
-							<img className="works__item__img" src={content.main_img.url} alt="" />
-							<h3 className="works__item__title">{content.title}</h3>
+							<Link href={`/works/${content.id}`}>
+								<a href="#">
+									<img className="works__item__img" src={content.main_img.url} alt="" />
+									<h3 className="works__item__title">{content.title}</h3>
+								</a>
+							</Link>
 						</li>
 					)
 				})}

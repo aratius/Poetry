@@ -7,6 +7,13 @@ export interface _CmsImg {
 	height: number;
 }
 
+export interface _SubImg {
+	img: _CmsImg;
+}
+
+export interface _Iframe {
+	url: string;
+}
 
 /**
  * Works
@@ -24,7 +31,7 @@ export interface _Work {
 	title: string,
 	main_img: _CmsImg,
 	main_desc: string,
-	sub_contents: (_CmsImg | string)[],  // 画像かiframe
+	sub_contents: (_CmsImg | _Iframe)[],  // 画像かiframe
 	categories: string[],
 	credit: string,  // 自由入力（,区切りで改行）
 	client: string,
