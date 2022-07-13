@@ -22,12 +22,10 @@ export default class Index extends Component<Props, State> {
 	}
 
 	public render(): ReactElement {
-		console.log(this.props);
-
 		return (
-			<>
+			<div className="wrapper">
 				<Works contents={this.props.works.contents} />
-			</>
+			</div>
 		);
 	}
 }
