@@ -1,5 +1,6 @@
 import { Component, ReactElement } from "react";
 import MicroCMS from "src/cms/microCms";
+import Contact from "src/components/common/contact";
 import Header from "src/components/common/header";
 import Works from "src/components/works";
 import { API } from "src/constants/api";
@@ -29,6 +30,7 @@ export default class Index extends Component<Props, State> {
 				<Header name={about.name}/>
 				<div className="top__wrapper">
 					<Works contents={works.contents} />
+					<Contact />
 				</div>
 			</>
 		);

@@ -14,7 +14,11 @@ export default class Header extends Component<Props, State> {
 		const {name} = this.props
 		return (
 			<header className="header">
-				<h1 className="header__logo">{name}</h1>
+				<h1 className="header__logo">
+					<Link href="/">
+						{name}
+					</Link>
+				</h1>
 				<nav className="header__nav">
 					<ol className="header__nav__link">
 						<Link href="/about">
