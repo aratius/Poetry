@@ -69,6 +69,7 @@ export default class Contact extends Component<Props, State> {
 		const {name, email, phone, web, message} = this.state.form
 		const date = new Date()
 		const formated = `
+--------------------
 問い合わせがありました。\n
 日時 : ${date.getFullYear()}/${date.getMonth()}/${date.getDay()}　${date.getHours()}:${date.getMinutes()}
 名前 : ${name}\n
@@ -76,6 +77,7 @@ export default class Contact extends Component<Props, State> {
 電話番号 : ${phone}\n
 ウェブサイト : ${web}\n
 メッセージ : ${message}
+--------------------
 		`
 		sendMessage(formated)
 	}
