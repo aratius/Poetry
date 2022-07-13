@@ -1,4 +1,11 @@
-$ITEM_WIDTH : 24%;
+@mixin ITEM_WIDTH() {
+	@media screen and (min-width: 786px) {
+		width : 24%;
+	}
+	@media screen and (max-width: 786px) {
+		width : 49%;
+	}
+}
 
 .top__wrapper {
 	width: 80vw;
@@ -18,21 +25,26 @@ $ITEM_WIDTH : 24%;
 		&::after {
 			content: "";
 			display: block;
-			width: $ITEM_WIDTH;
+			@include ITEM_WIDTH();
 			order: 1;
 		}
 		&::before {
 			content: "";
 			display: block;
-			width: $ITEM_WIDTH;
+			@include ITEM_WIDTH();
 			order: 1;
 		}
 
 		.works__item {
-			width: $ITEM_WIDTH;
+			@include ITEM_WIDTH();
 			aspect-ratio: 16 / 9;
 			flex-shrink: 0;
-			margin-bottom: 1.5%;
+			@media screen and (min-width: 786px) {
+				margin-bottom: 1.5%;
+			}
+			@media screen and (max-width: 786px) {
+				margin-bottom: 2%;
+			}
 			position: relative;
 
 			a {
