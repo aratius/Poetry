@@ -1,5 +1,5 @@
 import { Component, ReactElement } from "react";
-import MicroCMS from "src/api/microCms";
+import MicroCMS from "src/apis/microCms";
 import Head from "src/components/common/head";
 import Header from "src/components/common/header";
 import Works from "src/components/works";

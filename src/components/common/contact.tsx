@@ -1,5 +1,5 @@
 import { Component, ReactElement, SyntheticEvent } from "react";
-import { sendMessage } from "src/api/incomingWebHook";
+import { sendMessage } from "src/apis/incomingWebHook";
 import Input from "./Input";
 import TextArea from "./textArea";
 

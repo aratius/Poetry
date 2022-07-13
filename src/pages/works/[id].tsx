@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { Component } from "react";
-import MicroCMS from "src/api/microCms";
+import MicroCMS from "src/apis/microCms";
 import Head from "src/components/common/head";
 import Header from "src/components/common/header";
 import Work from "src/components/works/detail";
