@@ -1,4 +1,5 @@
 import { Component, ReactElement, SyntheticEvent } from "react";
+import { sendMessage } from "src/api/incomingWebHook";
 import Input from "./Input";
 import TextArea from "./textArea";
 
@@ -32,10 +33,6 @@ export default class Contact extends Component<Props, State> {
 		canSubmit: false
 	}
 
-	componentDidUpdate(): void {
-
-	}
-
 	/**
 	 * フォーム変更時
 	 * @param el
@@ -58,8 +55,6 @@ export default class Contact extends Component<Props, State> {
 			form.message = val
 		}
 
-		console.log("hoge", form);
-		console.log(type, val);
 		this.setState({
 			...this.state,
 			form: form
@@ -68,7 +63,21 @@ export default class Contact extends Component<Props, State> {
 	}
 
 	private _Submit = (e: SyntheticEvent) => {
-		console.log("submit");
+		for(const key in this.state.form){
+			if((this.state.form as any)[key] == "") return;
+		}
+		const {name, email, phone, web, message} = this.state.form
+		const date = new Date()
+		const formated = `
+問い合わせがありました。\n
+日時 : ${date.getFullYear()}/${date.getMonth()}/${date.getDay()}　${date.getHours()}:${date.getMinutes()}
+名前 : ${name}\n
+メール : ${email}\n
+電話番号 : ${phone}\n
+ウェブサイト : ${web}\n
+メッセージ : ${message}
+		`
+		sendMessage(formated)
 	}
 
 	public render(): ReactElement {

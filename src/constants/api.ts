@@ -7,3 +7,5 @@ export const API: Dictionary<string> = {
 	ABOUT: "about",
 	WORKS: "works",
 };
+
+export const INCOMING_WEBHOOK_URL = process.env.NEXT_PUBLIC_INCOMING_WEBHOOK_URL || "";
