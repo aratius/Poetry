@@ -1,38 +1,43 @@
 .contact__wrapper {
+	width: 80%;
+	margin: auto;
+}
 
-	.contact {
-		&__title {
-			margin-bottom: 30px;
-		}
-		input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea {
-			width:100%;
-			border:1px solid #CCC;
-			background:#FFF;
-			margin:0 0 5px;
-			padding:10px;
-			border-radius: 2px;
-		}
-
-		input[type="text"]:hover, input[type="email"]:hover, input[type="tel"]:hover, input[type="url"]:hover, textarea:hover {
-			-webkit-transition:border-color 0.3s ease-in-out;
-			-moz-transition:border-color 0.3s ease-in-out;
-			transition:border-color 0.3s ease-in-out;
-			border:1px solid #AAA;
-		}
-
-		textarea {
-			height:100px;
-			max-width:100%;
-			resize:none;
-		}
-
-		button {
-			width: 100px;
-			height: 40px;
-			color: #fff;
-			border-radius: 2px;
-			background-color: #ccc;
-		}
+.contact {
+	&__title {
+		margin-bottom: 30px;
+	}
+	input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea {
+		width:100%;
+		border:1px solid #CCC;
+		background:#FFF;
+		margin:0 0 5px;
+		padding:10px;
+		border-radius: 2px;
 	}
 
+	input[type="text"]:hover, input[type="email"]:hover, input[type="tel"]:hover, input[type="url"]:hover, textarea:hover {
+		-webkit-transition:border-color 0.3s ease-in-out;
+		-moz-transition:border-color 0.3s ease-in-out;
+		transition:border-color 0.3s ease-in-out;
+		border:1px solid #AAA;
+	}
+
+	textarea {
+		height:100px;
+		max-width:100%;
+		resize:none;
+	}
+
+	button {
+		width: 100px;
+		height: 40px;
+		color: #fff;
+		border-radius: 2px;
+		background-color: #ccc;
+
+		&.active {
+			background-color: #33f;
+		}
+	}
 }

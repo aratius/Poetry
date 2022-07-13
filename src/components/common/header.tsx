@@ -31,7 +31,7 @@ export default class Header extends Component<Props, State> {
 						</Link>
 					</ol>
 					<ol className="header__nav__link">
-						<Link href="/works">
+						<Link href="/contact">
 							contact
 						</Link>
 					</ol>
