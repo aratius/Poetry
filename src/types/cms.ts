@@ -27,6 +27,7 @@ export interface Work {
 	sub_contents: (CmsImg | string)[],  // 画像かiframe
 	categories: string[],
 	credit: string,  // 自由入力（,区切りで改行）
+	client: string,
 	link: string,
 }
 
