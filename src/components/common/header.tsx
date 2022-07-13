@@ -24,12 +24,17 @@ export default class Header extends Component<Props, State> {
 						<Link href="/about">
 							about
 						</Link>
-						</ol>
+					</ol>
 					<ol className="header__nav__link">
 						<Link href="/works">
 							works
 						</Link>
-						</ol>
+					</ol>
+					<ol className="header__nav__link">
+						<Link href="/works">
+							contact
+						</Link>
+					</ol>
 				</nav>
 			</header>
 		);

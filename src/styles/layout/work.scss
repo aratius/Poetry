@@ -18,8 +18,11 @@ $ITEM_WIDTH : 24%;
 
 	.work__main_img {
 		width: 100vw;
+		max-width: 9999px;
 		aspect-ratio: 16 / 9;
 		margin-bottom: 150px;
+		position: relative;
+		left: -10vw;
 	}
 
 	.work__main__desc {
