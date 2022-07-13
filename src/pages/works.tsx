@@ -1,5 +1,6 @@
 import { Component, ReactElement } from "react";
 import MicroCMS from "src/api/microCms";
+import Head from "src/components/common/head";
 import Header from "src/components/common/header";
 import Works from "src/components/works";
 import { API } from "src/constants/api";
@@ -13,19 +14,17 @@ interface State { }
 
 export default class Index extends Component<Props, State> {
 
-	public state: State = {};
-	constructor(props: Props) {
-		super(props);
-		this.state = {};
-	}
-
-	public componentDidMount(): void {
-	}
-
 	public render(): ReactElement {
 		const {about, works} = this.props
 		return (
 			<>
+				<Head
+					url={`https://poetry.aualrxse.com/works`}
+					title={about.name}
+					description={`${about.name}'s portfolio.`}
+					siteName={about.name}
+					ogImgUrl="https://poetry.aualrxse.com/150x150.png"
+				/>
 				<Header name={about.name}/>
 				<div className="top__wrapper">
 					<Works contents={works.contents} />

@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { Component } from "react";
 import MicroCMS from "src/api/microCms";
+import Head from "src/components/common/head";
 import Header from "src/components/common/header";
 import Work from "src/components/works/detail";
 import { API } from "src/constants/api";
@@ -16,10 +17,18 @@ interface State {
 }
 
 export default class Detail extends Component<Props, State> {
+
 	render() {
 		const {work, about} = this.props
 		return (
 			<>
+				<Head
+					url={`https://poetry.aualrxse.com/${work.id}`}
+					title={about.name}
+					description={`${about.name}'s portfolio.`}
+					siteName={about.name}
+					ogImgUrl={work.main_img.url}
+				/>
 				<Header name={about.name} />
 				<div className="work_detail__wrapper">
 					<Work data={work} />
@@ -27,6 +36,7 @@ export default class Detail extends Component<Props, State> {
 			</>
 		);
 	}
+
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
