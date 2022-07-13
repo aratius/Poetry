@@ -19,7 +19,12 @@ $ITEM_WIDTH : 24%;
 	.work__main_img {
 		width: 100%;
 		aspect-ratio: 16 / 9;
-		margin-bottom: 100px;
+		margin-bottom: 50px;
+	}
+
+	.work__main__desc {
+		line-height: 1.5;
+		margin-bottom: 50px;
 	}
 
 	.work__sub {

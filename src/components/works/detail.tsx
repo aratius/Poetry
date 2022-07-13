@@ -46,6 +46,8 @@ export default class Work extends Component<Props, State> {
 					})}
 				</div>
 
+				<p className="work__main__desc">{data.main_desc}</p>
+
 				{/* クレジット */}
 				<h4>credit</h4>
 				<p className="work__credit">
