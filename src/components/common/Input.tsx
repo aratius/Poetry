@@ -4,7 +4,7 @@ import { Component, ReactElement, SyntheticEvent } from "react";
 interface Props {
 	placeholder: string,
 	type: string,
-	name: string,
+	kind: string,
 	tabIndex: number,
 	required?: boolean,
 	autoFocus?: boolean,
@@ -20,7 +20,7 @@ export default class Input extends Component<Props, State> {
 	static defaultProps: Props = {
 		placeholder: "",
 		type: "",
-		name: "",
+		kind: "",
 		tabIndex: 1,
 		required: false,
 		autoFocus: false,
@@ -32,17 +32,17 @@ export default class Input extends Component<Props, State> {
 	 * @param e
 	 */
 	private _onChange = (e: SyntheticEvent): void => {
-		const {type} = this.props
-		const val = (e.target as HTMLInputElement).value
-		this.props.onChangeForm(type, val)
+		const {kind} = this.props
+		const val = (e.target as HTMLInputElement).value || ""
+
+		this.props.onChangeForm(kind, val)
 	}
 
 	public render(): ReactElement {
-		const {placeholder, type, tabIndex, required, autoFocus} = this.props
+		const {placeholder, type, kind, tabIndex, required, autoFocus} = this.props
 		return (
 			<input
 				placeholder={placeholder}
-				name={type}
 				type={type}
 				tabIndex={tabIndex}
 				required={required}

@@ -4,7 +4,7 @@ import { Component, ReactElement, SyntheticEvent } from "react";
 interface Props {
 	placeholder: string,
 	type: string,
-	name: string,
+	kind: string,
 	tabIndex: number,
 	required?: boolean,
 	autoFocus?: boolean,
@@ -20,7 +20,7 @@ export default class TextArea extends Component<Props, State> {
 	static defaultProps: Props = {
 		placeholder: "",
 		type: "",
-		name: "",
+		kind: "",
 		tabIndex: 1,
 		required: false,
 		autoFocus: false,
@@ -32,7 +32,9 @@ export default class TextArea extends Component<Props, State> {
 	 * @param e
 	 */
 	private _onChange = (e: SyntheticEvent): void => {
-		console.log(e);
+		const {kind} = this.props
+		const val = (e.target as HTMLInputElement).value
+		this.props.onChangeForm(kind, val)
 	}
 
 	public render(): ReactElement {
@@ -40,8 +42,6 @@ export default class TextArea extends Component<Props, State> {
 		return (
 			<textarea
 				placeholder={placeholder}
-				// type={type}
-				name={type}
 				tabIndex={tabIndex}
 				required={required}
 				autoFocus={autoFocus}

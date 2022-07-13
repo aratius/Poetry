@@ -42,8 +42,28 @@ export default class Contact extends Component<Props, State> {
 	 * @param val
 	 */
 	private _onChangeForm = (type: string, val: string): void => {
-		console.log(type, val);
 		// NOTE: バリデーションやるならここで
+
+		const form = {...this.state.form}
+
+		if(type == "name") {
+			form.name = val
+		} else if (type == "email") {
+			form.email = val
+		} else if (type == "phone") {
+			form.phone = val
+		} else if (type == "web") {
+			form.web = val
+		} else if (type == "message") {
+			form.message = val
+		}
+
+		console.log("hoge", form);
+		console.log(type, val);
+		this.setState({
+			...this.state,
+			form: form
+		})
 
 	}
 
@@ -59,7 +79,7 @@ export default class Contact extends Component<Props, State> {
 					<Input
 						placeholder="Your name"
 						type="text"
-						name="text"
+						kind="name"
 						tabIndex={1}
 						required
 						autoFocus
@@ -70,7 +90,7 @@ export default class Contact extends Component<Props, State> {
 					<Input
 						placeholder="Your Email Address"
 						type="email"
-						name="email"
+						kind="email"
 						tabIndex={2}
 						required
 						onChangeForm={this._onChangeForm}
@@ -80,7 +100,7 @@ export default class Contact extends Component<Props, State> {
 					<Input
 						placeholder="Your Phone Number"
 						type="tel"
-						name="tel"
+						kind="phone"
 						tabIndex={3}
 						required
 						onChangeForm={this._onChangeForm}
@@ -90,7 +110,7 @@ export default class Contact extends Component<Props, State> {
 					<Input
 						placeholder="Your Web Site starts with http://"
 						type="url"
-						name="url"
+						kind="web"
 						tabIndex={4}
 						required
 						onChangeForm={this._onChangeForm}
@@ -99,7 +119,7 @@ export default class Contact extends Component<Props, State> {
 				<fieldset>
 					<TextArea
 						placeholder="Type your Message Here...."
-						name="message"
+						kind="message"
 						tabIndex={5}
 						required
 						onChangeForm={this._onChangeForm}
@@ -107,7 +127,6 @@ export default class Contact extends Component<Props, State> {
 				</fieldset>
 				<fieldset>
 					<button
-						name="submit"
 						type="submit"
 						id="contact-submit"
 						data-submit="...Sending"
