@@ -1,0 +1,27 @@
+.header {
+	width: 80%;
+	height: 70px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__logo {
+		font-size: 1.5rem;
+	}
+
+	&__nav {
+		display: flex;
+
+		&__link {
+			font-size: 1rem;
+			margin-left: 10px;
+			&:not(:last-child) {
+				&::after {
+					content: "/";
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}
