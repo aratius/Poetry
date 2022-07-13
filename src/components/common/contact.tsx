@@ -43,6 +43,8 @@ export default class Contact extends Component<Props, State> {
 	 */
 	private _onChangeForm = (type: string, val: string): void => {
 		console.log(type, val);
+		// NOTE: バリデーションやるならここで
+
 	}
 
 	private _Submit = (e: SyntheticEvent) => {
