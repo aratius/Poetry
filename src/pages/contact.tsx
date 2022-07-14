@@ -3,7 +3,7 @@ import MicroCMS from "src/apis/microCms";
 import ContactForm from "src/components/common/contact";
 import Head from "src/components/common/head";
 import Header from "src/components/common/header";
-import { API } from "src/constants/api";
+import { API } from "src/constants/apis";
 import { _About, _Works } from "src/types/cms";
 
 interface Props {

@@ -63,6 +63,7 @@ export default class Contact extends Component<Props, State> {
 	}
 
 	private _Submit = (e: SyntheticEvent) => {
+		if(e && e.cancelable) e.preventDefault()
 		for(const key in this.state.form){
 			if((this.state.form as any)[key] == "") return;
 		}

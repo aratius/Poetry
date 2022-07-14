@@ -1,5 +1,5 @@
 import { createClient, MicroCMSListResponse } from "microcms-js-sdk";
-import { API_KEY, SERVICE_DOMAIN } from "src/constants/api";
+import { API_KEY, SERVICE_DOMAIN } from "src/constants/apis";
 
 /**
  * MicroCMSクラス

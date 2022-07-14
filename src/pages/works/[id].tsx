@@ -4,7 +4,7 @@ import MicroCMS from "src/apis/microCms";
 import Head from "src/components/common/head";
 import Header from "src/components/common/header";
 import Work from "src/components/works/detail";
-import { API } from "src/constants/api";
+import { API } from "src/constants/apis";
 import { _About, _Work } from "src/types/cms";
 
 interface Props {
