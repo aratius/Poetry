@@ -39,7 +39,7 @@ export default class Index extends Component<Props, State> {
 export const getStaticProps = async () => {
 	const worksCms = new MicroCMS(API.WORKS)
 	const aboutCms = new MicroCMS(API.ABOUT)
-	const works = await (await worksCms.getList())
+	const works = await worksCms.getList()
 	const about = await aboutCms.get()
 	return {
 		props: {

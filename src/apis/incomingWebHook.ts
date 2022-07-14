@@ -10,5 +10,9 @@ export const sendMessage = async (text: string): Promise<void> => {
 		// },
 		body: JSON.stringify({ text })
 	});
-	console.log(res);
+	if (res.ok) {
+		return res.json();
+	} else {
+		throw new Error();
+	}
 };
