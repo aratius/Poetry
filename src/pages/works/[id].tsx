@@ -24,7 +24,7 @@ export default class Detail extends Component<Props, State> {
 			<>
 				<Head
 					url={`https://poetry.aualrxse.com/${work.id}`}
-					title={about.name}
+					title={work.title}
 					description={`${about.name}'s portfolio.`}
 					siteName={about.name}
 					ogImgUrl={work.main_img.url}
