@@ -27,6 +27,8 @@ export default class Head extends Component<Props, State> {
 		const {url, title, description, siteName, ogImgUrl} = this.props
 		return (
 			<NextHead>
+				<link rel="icon" href="/favicon.ico" />
+
 				<meta property="og:url" content={url} />
 				<meta property="og:type" content="website" />
 				<meta property="og:title" content={title} />
