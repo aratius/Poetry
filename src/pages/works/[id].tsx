@@ -51,8 +51,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 
 export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsContext) => {
-	console.log(params);
-
 	const worksCms = new MicroCMS(API.WORKS)
 	const aboutCms = new MicroCMS(API.ABOUT)
 	const work = await worksCms.get(params!.id as string)
